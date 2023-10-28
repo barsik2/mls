@@ -3,7 +3,7 @@
 .header {
     display: flex;
     justify-content: space-around;
-    width: 100%;
+    width: 100vw;
     height: 90px;
     background-color: #18B0C9;
     font-family: Julius Sans One;
@@ -11,7 +11,7 @@
 }
 
 .logo {
-    font-size: 40px;
+    font-size: clamp(10px, 30vw,40px);
     font-style: normal;
     font-weight: 400;
     line-height: normal;
@@ -27,7 +27,8 @@
     align-items: center;
     color: #FFF;
     font-family: Julius Sans One;
-    font-size: 36px;
+    
+    font-size: clamp(10px, 6vw,36px);
     font-style: normal;
     font-weight: 200;
     line-height: normal;
