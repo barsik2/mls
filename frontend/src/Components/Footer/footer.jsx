@@ -10,7 +10,7 @@ const Footer = () => {
             <p className={styles.partner_name}>Федеральная служба аккредитации (Росаккредитация)</p>
         </div>
         <div>
-            <img src={LogoFooter} alt="Цифровой прорыв" />
+            <img className={styles.image} src={LogoFooter} alt="Цифровой прорыв" />
         </div>
 
     </div>

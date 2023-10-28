@@ -32,3 +32,17 @@
     line-height: normal;
     font-variant: small-caps;
 }
+
+
+@media (max-width: 425px) {
+    .image {
+        width: 150px;
+    }
+}
+
+@media (max-width: 320px) {
+    .image {
+        width: 100px;
+    }
+}
+

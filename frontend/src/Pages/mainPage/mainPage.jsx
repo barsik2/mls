@@ -4,13 +4,26 @@ import Button from "../../Components/Button/buttonAnalize";
 import FileUpload from "../../Components/FileUploader/fileUploader";
 import Header from "../../Components/Header/header";
 import styles from "./styles.module.css";
+import ButtonDescription from "../../Components/ButtonAnalyze/buttonDescription";
 
 const MainPage = () => {
   const [isFileUploaded, setIsFileUploaded] = useState(false);
+  const [dataFilled, setDataFilled] = useState(false);
 
   const handleFileUpload = (value) => {
     setIsFileUploaded(value);
   };
+
+  // const handleSelectChange = (event) => {
+  //   const selectedValue = event.target.value;
+  //   setDataFilled(selectedValue !== "Очистить");
+  // };
+
+  const handleTextareaChange = (event) => {
+    const textareaValue = event.target.value;
+    setDataFilled(textareaValue !== "");
+  };
+
 
   return (
     <div>
@@ -22,6 +35,7 @@ const MainPage = () => {
         <div className={styles.group_info}>
           <div className={styles.chooseProduct}>
             <p className={styles.text_chooseProduct}>Группа продукции</p>
+            {/* <select className={styles.dropdown} onChange={handleSelectChange}> */}
             <select className={styles.dropdown}>
               <option>Очистить</option>
               <option>Товары</option>
@@ -29,21 +43,27 @@ const MainPage = () => {
 
 
             <p className={styles.text_chooseProduct}>Классификатор ОКПД 2</p>
+            {/* <select className={styles.dropdown} onChange={handleSelectChange}> */}
             <select className={styles.dropdown}>
-              <label>Выберите группу продукции</label>
               <option>Очистить</option>
               <option>Товары</option>
             </select>
 
             <p className={styles.text_chooseProduct}>Классификатор ТН ВЭД ЕАЭС</p>
+            {/* <select className={styles.dropdown} onChange={handleSelectChange}> */}
             <select className={styles.dropdown}>
               <option>Очистить</option>
               <option>Товары</option>
             </select>
 
-            <p className={styles.text_chooseProduct}>Наименование</p>
-            <textarea rows={15} className={styles.name_input} placeholder="Введите наименование продукции" />
-
+            <p className={styles.text_chooseProduct}>Наименование*</p>
+            <textarea
+              rows={15}
+              className={styles.name_input}
+              placeholder="Введите наименование продукции"
+              onChange={handleTextareaChange}
+            />
+            <ButtonDescription isClickable={dataFilled} />
           </div>
 
           <div className={styles.trebovania}>
@@ -81,12 +101,12 @@ const MainPage = () => {
             <p className={styles.text_description}>Структурный элемент или объект: </p>
             <p className={styles.text_description}>Пункт/раздел стандарта: </p>
           </div>
-          <div className={styles.state_result}>
+          <div className={styles.state_result_second}>
             <h3 className={styles.result_classification}>Рекомендации: </h3>
             <ul>
-              <li>Маркировочное устройство;</li>
-              <li>Тарированный спидометр;</li>
-              <li>Прибор для измерения силы;</li>
+              <li className={styles.li_description}>Маркировочное устройство;</li>
+              <li className={styles.li_description}>Тарированный спидометр;</li>
+              <li className={styles.li_description}>Прибор для измерения силы;</li>
             </ul>
           </div>
         </div>

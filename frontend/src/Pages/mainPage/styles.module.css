@@ -3,7 +3,6 @@
     margin-right: 50px;
     margin-top: 40px;
     box-sizing: border-box;
-
 }
 
 .group_info {
@@ -123,6 +122,15 @@
     margin-bottom: 70px;
 }
 
+.state_result_second {
+    width: 670px;
+    border-radius: 25px;
+    border: 1px solid var(--wz_main_2, #18B0C9);
+    padding: 20px;
+    margin-bottom: 70px;
+    margin-left: 10px;
+}
+
 .result_classification {
     padding-bottom: 25px;
     color: #000;
@@ -140,5 +148,96 @@
 ul {
     margin-block-start: 0em;
     margin-block-end: 0em;
-    padding-inline-start: 100px;
+    padding-inline-start: 20px;
+}
+
+.trebovania {
+    padding-left: 10px;
+}
+
+@media (max-width: 1024px) {
+    .dropdown {
+        width: 300px;
+    }
+    .name_input {
+        width: 300px;
+    }
+}
+
+@media (max-width: 768px) {
+    .group_info {
+        display: block;
+        text-align: center
+    }
+    .container_result {
+        display: block;
+        text-align: center;
+    }
+    .result_h,
+    .text {
+        font-size: 20px;
+    }
+    .state_result {
+        width: 400px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .state_result_second {
+        width: 400px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .result_classification {
+        font-size: 20px;
+    }
+    .text_description {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 550px) {
+    .container {
+        margin-left: 70px;
+        margin-right: 70px;
+    }
+    .state_result {
+        width: 250px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .state_result_second {
+        width: 250px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media (max-width: 375px) {
+    .dropdown {
+        width: 150px;
+    }
+    .name_input {
+        width: 150px;
+    }
+}
+
+@media (max-width: 320px) {
+    .dropdown {
+        width: 150px;
+    }
+    .name_input {
+        width: 150px;
+    }
+    .state_result {
+        width: 150px;
+    }
+    .state_result_second {
+        width: 150px;
+    }
+    .result_classification {
+        font-size: 10px;
+    }
+    .li_description {
+        font-size: 10px;
+    }
 }
