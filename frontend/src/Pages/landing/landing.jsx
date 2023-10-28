@@ -6,6 +6,7 @@ import step_1 from "./instr_1.svg";
 import step_2 from "./instr_2.svg";
 import step_3 from "./instr_3.svg";
 import step_4 from "./instr_4.svg";
+import Footer from "../../Components/Footer/footer";
 
 const instructionMap = [
   {
@@ -86,6 +87,7 @@ const Landing = () => {
           <Container text={step.text} img={step.img} />
         ))}
       </div>
+      <Footer />
     </div>
   );
 };

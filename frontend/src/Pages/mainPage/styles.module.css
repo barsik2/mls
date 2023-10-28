@@ -1,0 +1,144 @@
+.container {
+    margin-left: 90px;
+    margin-right: 50px;
+    margin-top: 40px;
+    box-sizing: border-box;
+
+}
+
+.group_info {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 40px;
+}
+
+.text {
+    color: #000;
+    text-align: center;
+    font-family: Montserrat;
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-bottom: 68px;
+}
+
+.text_chooseProduct {
+    color: #000;
+    font-family: Montserrat;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    font-variant: small-caps;
+    margin-bottom: 19px;
+}
+
+.dropdown {
+    width: 500px;
+    height: 50px;
+    padding: 14px 18px 14px 18px;
+    background-position-x: calc(100% - 20px);
+    border-radius: 25px;
+    border: 1px solid var(--wz_main_2, #18B0C9);
+    background: #FFF;
+    margin-bottom: 29px;
+}
+
+.name_input {
+    width: 500px;
+    padding: 20px;
+    border-radius: 25px;
+    border: 1px solid var(--wz_main_2, #18B0C9);
+    background: #FFF;
+}
+
+.requirements_file {
+    color: #000;
+    font-family: Montserrat;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    font-variant: small-caps;
+    padding-bottom: 22px;
+}
+
+.requirements_file_ul {
+    color: #000;
+    font-family: Montserrat;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    font-variant: small-caps;
+    padding-bottom: 16px;
+}
+
+.requirements_file_li {
+    color: #000;
+    font-family: Montserrat;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    font-variant: small-caps;
+}
+
+.div_table {
+    margin-top: 42px;
+    margin-bottom: 44px;
+}
+
+.example_table {
+    color: var(--wz_main_2, #18B0C9);
+    font-family: Montserrat;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    text-decoration: none;
+}
+
+.container_result {
+    margin-top: 68px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.result_h {
+    color: #000;
+    text-align: center;
+    font-family: Montserrat;
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.state_result {
+    width: 670px;
+    border-radius: 25px;
+    border: 1px solid var(--wz_main_2, #18B0C9);
+    padding: 20px;
+    margin-bottom: 70px;
+}
+
+.result_classification {
+    padding-bottom: 25px;
+    color: #000;
+    font-family: Montserrat;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.text_description {
+    padding-bottom: 20px;
+}
+
+ul {
+    margin-block-start: 0em;
+    margin-block-end: 0em;
+    padding-inline-start: 100px;
+}

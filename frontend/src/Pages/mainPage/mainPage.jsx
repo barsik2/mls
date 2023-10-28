@@ -1,66 +1,94 @@
 
+import React, { useState } from "react";
+import Button from "../../Components/Button/buttonAnalize";
+import FileUpload from "../../Components/FileUploader/fileUploader";
 import Header from "../../Components/Header/header";
-import "./styles.css";
+import styles from "./styles.module.css";
 
 const MainPage = () => {
+  const [isFileUploaded, setIsFileUploaded] = useState(false);
+
+  const handleFileUpload = (value) => {
+    setIsFileUploaded(value);
+  };
+
   return (
     <div>
       <Header/>
-      <div className="container">
-        <h1 className="text">
+      <div className={styles.container}>
+        <h1 className={styles.text}>
           Опишите продукцию или загрузите таблицу для анализа
         </h1>
-        <div className="group_info">
-          <div className="chooseProduct">
-            <p className="text_chooseProduct">Группа продукции</p>
-            <select className="dropdown">
+        <div className={styles.group_info}>
+          <div className={styles.chooseProduct}>
+            <p className={styles.text_chooseProduct}>Группа продукции</p>
+            <select className={styles.dropdown}>
               <option>Очистить</option>
               <option>Товары</option>
             </select>
 
-            <p className="text_chooseProduct">Классификатор ОКПД 2</p>
-            <select className="dropdown">
+
+            <p className={styles.text_chooseProduct}>Классификатор ОКПД 2</p>
+            <select className={styles.dropdown}>
+              <label>Выберите группу продукции</label>
               <option>Очистить</option>
               <option>Товары</option>
             </select>
 
-            <p className="text_chooseProduct">Классификатор ТН ВЭД ЕАЭС</p>
-            <select className="dropdown">
+            <p className={styles.text_chooseProduct}>Классификатор ТН ВЭД ЕАЭС</p>
+            <select className={styles.dropdown}>
               <option>Очистить</option>
               <option>Товары</option>
             </select>
 
-            <p className="text_chooseProduct">Наименование</p>
-            <textarea />
+            <p className={styles.text_chooseProduct}>Наименование</p>
+            <textarea rows={15} className={styles.name_input} placeholder="Введите наименование продукции" />
 
-            <button>Анализ описания</button>
           </div>
 
-          <div className="trebovania">
-            <p>Требования к загружаемому файлу</p>
-            <p>
+          <div className={styles.trebovania}>
+            <p className={styles.requirements_file}>Требования к загружаемому файлу</p>
+            <p className={styles.requirements_file_ul}>
               Скачайте файл-шаблон и заполните строки данными о товарах по
               правилам:
             </p>
-            <p>
-              Не вносите изменения в названия столбцов Текст текст текст текст
-            </p>
+            <ul>
+              <li className={styles.requirements_file_li}>
+                Не вносите изменения в названия столбцов Текст текст текст текст
+              </li>
+              <li className={styles.requirements_file}>
+                поле “Наименование продукции” обязательно к заполнению;
+              </li>
+            </ul>
 
-            <a>Скачать шаблон табицы</a>
+            <div className={styles.div_table}>
+              <a className={styles.example_table} href="/">Скачать шаблон табицы</a>
+            </div>
 
-            <button>Анализ документа</button>
+            <FileUpload isFileUploaded={isFileUploaded} handleFileUpload={handleFileUpload} />
+
+            <Button isFileUploaded={isFileUploaded} />
+
           </div>
         </div>
 
-        <div>
-          <div>
-            <p>Результат классификации: </p>
-            <p>Обозначение и наименование стандарта: </p>
-            <p>Результат классификации: </p>
-            <p>Результат классификации: </p>
-            <p>Результат классификации: </p>
+        <h1 className={styles.result_h}>Посмотрите, что мы нашли</h1>
+        <div className={styles.container_result}>
+          <div className={styles.state_result}>
+            <h3 className={styles.result_classification}>Результат классификации: </h3>
+            <p className={styles.text_description}>Обозначение и наименование стандарта: </p>
+            <p className={styles.text_description}>Пункт/статья в ТР ТС: </p>
+            <p className={styles.text_description}>Структурный элемент или объект: </p>
+            <p className={styles.text_description}>Пункт/раздел стандарта: </p>
           </div>
-          <div></div>
+          <div className={styles.state_result}>
+            <h3 className={styles.result_classification}>Рекомендации: </h3>
+            <ul>
+              <li>Маркировочное устройство;</li>
+              <li>Тарированный спидометр;</li>
+              <li>Прибор для измерения силы;</li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>

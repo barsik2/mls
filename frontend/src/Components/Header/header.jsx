@@ -28,7 +28,7 @@ const Header = () => {
           </svg>
           <span className="text_docs">Документация</span>
         </a>
-        <a href="/" className="menu_main">
+        <a href="/main" className="menu_main">
           Решение
         </a>
       </div>

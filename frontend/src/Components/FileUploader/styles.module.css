@@ -1,0 +1,52 @@
+.conteiner_file {
+    padding: 100px;
+    border-radius: 25px;
+    border: 1px dashed var(--wz_main_2, #18B0C9);
+}
+
+.center_info {
+    text-align: center;
+}
+
+.img_background {
+    width: 100px;
+    height: 100px;
+}
+
+.header_upload_file {
+    color: #000;
+    font-family: Montserrat;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    font-variant: small-caps;
+}
+
+.text {
+    color: var(--wz_main, rgba(24, 176, 201, 0.50));
+    text-align: center;
+    font-family: Montserrat;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    text-transform: uppercase;
+}
+
+.btn_upload {
+    cursor: pointer;
+    border: none;
+    background: #fff;
+}
+
+.file_name {
+    display: flex;
+    text-align: center;
+    align-items: center;
+}
+
+.btn_conteiner {
+    display: flex;
+    justify-content: flex-end;
+}
