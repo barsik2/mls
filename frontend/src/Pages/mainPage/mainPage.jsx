@@ -1,5 +1,5 @@
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Button from "../../Components/Button/buttonAnalize";
 import FileUpload from "../../Components/FileUploader/fileUploader";
 import Header from "../../Components/Header/header";
@@ -9,6 +9,31 @@ import ButtonDescription from "../../Components/ButtonAnalyze/buttonDescription"
 const MainPage = () => {
   const [isFileUploaded, setIsFileUploaded] = useState(false);
   const [dataFilled, setDataFilled] = useState(false);
+  const [productGroupes, setProductGroupes] = useState([]);
+  const [standartGroupes, setStandartGroupes] = useState([]);
+
+
+  useEffect(() => {
+    fetch('http://127.0.0.1:5000/get_product_groupes')
+      .then(response => response.json())
+      .then(data => {
+        setProductGroupes(data.product_groupes);
+      })
+      .catch(error => {
+        console.error(error);
+      });
+  }, []);
+
+  useEffect(() => {
+    fetch('http://127.0.0.1:5000/get_standarts')
+      .then(response => response.json())
+      .then(data => {
+        setStandartGroupes(data.standarts);
+      })
+      .catch(error => {
+        console.error(error);
+      });
+  }, []);
 
   const handleFileUpload = (value) => {
     setIsFileUploaded(value);
@@ -37,23 +62,31 @@ const MainPage = () => {
             <p className={styles.text_chooseProduct}>Группа продукции</p>
             {/* <select className={styles.dropdown} onChange={handleSelectChange}> */}
             <select className={styles.dropdown}>
-              <option>Очистить</option>
-              <option>Товары</option>
+              <option className={styles.option_lenght}>Очистить</option>
+              {productGroupes.map((group, index) => (
+                <option className={styles.option_lenght} key={index}>{group}</option>
+              ))}
             </select>
 
+            <p className={styles.text_chooseProduct}>Стандарт</p>
+            {/* <select className={styles.dropdown} onChange={handleSelectChange}> */}
+            <select className={styles.dropdown}>
+              <option>Очистить</option>
+              {standartGroupes.map((standart, index) => (
+                <option key={index}>{standart}</option>
+              ))}
+            </select>
 
             <p className={styles.text_chooseProduct}>Классификатор ОКПД 2</p>
             {/* <select className={styles.dropdown} onChange={handleSelectChange}> */}
             <select className={styles.dropdown}>
               <option>Очистить</option>
-              <option>Товары</option>
             </select>
 
             <p className={styles.text_chooseProduct}>Классификатор ТН ВЭД ЕАЭС</p>
             {/* <select className={styles.dropdown} onChange={handleSelectChange}> */}
             <select className={styles.dropdown}>
               <option>Очистить</option>
-              <option>Товары</option>
             </select>
 
             <p className={styles.text_chooseProduct}>Наименование*</p>
@@ -82,7 +115,7 @@ const MainPage = () => {
             </ul>
 
             <div className={styles.div_table}>
-              <a className={styles.example_table} href="/">Скачать шаблон табицы</a>
+              <a className={styles.example_table} href="http://127.0.0.1:5000/get_template">Скачать шаблон табицы</a>
             </div>
 
             <FileUpload isFileUploaded={isFileUploaded} handleFileUpload={handleFileUpload} />

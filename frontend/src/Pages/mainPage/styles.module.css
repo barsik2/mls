@@ -42,6 +42,7 @@
     border: 1px solid var(--wz_main_2, #18B0C9);
     background: #FFF;
     margin-bottom: 29px;
+    overflow: auto;
 }
 
 .name_input {
@@ -129,6 +130,11 @@
     padding: 20px;
     margin-bottom: 70px;
     margin-left: 10px;
+}
+
+.option_lenght {
+    width: 500px !important;
+    word-break: break-all;
 }
 
 .result_classification {
